@@ -17,7 +17,7 @@ Without them the app still works with placeholder boxes.
 
 ## Host Free on Streamlit Community Cloud
 1. Push all files (app.py + requirements.txt + 3 PNGs) to GitHub
-2. Go to https://share.streamlit.io
+2. Go to https:[//share.streamlit.io](https://deaproject.streamlit.app/)
 3. New app -> connect repo -> Main file: app.py -> Deploy
 
 ## Pages
