@@ -146,7 +146,6 @@ with st.sidebar:
     st.markdown("<hr style='border-color:#243347;margin:18px 0;'>", unsafe_allow_html=True)
     st.markdown("""
     <div style='font-size:0.7rem;color:#8899AA;'>
-        <div style='margin-bottom:5px;'><span style='color:#E8B84B;'>▸</span> Parth Bisht · 23/IT/117</div>
         <div><span style='color:#E8B84B;'>▸</span> Ishaan Yadav · 23/IT/73</div>
     </div>
     """, unsafe_allow_html=True)
@@ -158,7 +157,6 @@ if "Overview" in page:
         <h1>MOVIELENS INTELLIGENCE PIPELINE</h1>
         <div class='sub'>End-to-End Data Engineering & Analytics on AWS with Power BI Visualisation</div>
         <div class='authors'>
-            <div class='author-chip'><span>Parth Bisht</span> · Roll No: 23/IT/117</div>
             <div class='author-chip'><span>Ishaan Yadav</span> · Roll No: 23/IT/73</div>
         </div>
     </div>
@@ -388,13 +386,13 @@ timestamp STRING""", language="text")
     with c2:
         st.markdown("<span class='badge badge-silver'>SILVER SCHEMA</span>", unsafe_allow_html=True)
         st.code("""enriched_movies/
-movieId       INT      ← cast
-title         STRING
-genres        STRING
-genre         STRING   ← EXPLODED
-avg_rating    DOUBLE   ← DERIVED
+movieId        INT      ← cast
+title          STRING
+genres         STRING
+genre          STRING   ← EXPLODED
+avg_rating     DOUBLE   ← DERIVED
 total_ratings BIGINT   ← DERIVED
-year          INT      ← EXTRACTED
+year           INT      ← EXTRACTED
 
 genre_analytics/
 genre, avg_genre_rating, movie_count
@@ -446,7 +444,7 @@ elif "Athena" in page:
         "Movie Classification":"""SELECT title, avg_rating, total_ratings,
   CASE
     WHEN avg_rating >= 3.8 AND total_ratings < 500 THEN 'Hidden Gem'
-    WHEN total_ratings >= 5000                      THEN 'Blockbuster'
+    WHEN total_ratings >= 5000                       THEN 'Blockbuster'
     ELSE 'Regular'
   END AS classification
 FROM enriched_movies WHERE avg_rating IS NOT NULL;""",
